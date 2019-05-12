@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SharinM_task_1.2.1</string>
+    <string name="app_name">Универсальная форма ввода</string>
     <string name="buttonSing">  Подписаться  </string>
     <string name="buttonClear"> Очистить </string>
     <string name="textViwEmail">Электронная почта:</string>
