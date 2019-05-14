@@ -2,6 +2,7 @@ package ru.netologia.sharinm_task_121;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,22 +16,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button SendButton = findViewById(R.id.SendButton);
-        final TextView MessangeTextView = findViewById(R.id.MessageTextView);
-        final EditText UserNameEditText = findViewById(R.id.UserNameEditText);
-        final EditText EmailEditText =findViewById(R.id.EmailEditText);
+        Button sendButton = findViewById(R.id.SendButton);
+        final TextView messageTextView = findViewById(R.id.MessageTextView);
+        final EditText userNameEditText = findViewById(R.id.UserNameEditText);
+        final EditText emailEditText =findViewById(R.id.EmailEditText);
 
-        SendButton.setOnClickListener(new View.OnClickListener() {
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                if (UserNameEditText.getText().length() != 0) {
-                    if (EmailEditText.getText().length() != 0){
-                        MessangeTextView.setText("Подписка на рассылку удачно подписана для пользователя " + UserNameEditText.getText().toString() + " на электронный адрес " + EmailEditText.getText().toString());
+                if (userNameEditText.getText().length() != 0) {
+                    if (emailEditText.getText().length() != 0){
+                        messageTextView.setText(getString(R.string.textMessageNotify
+                                                            ,userNameEditText.getText().toString()
+                                                            ,emailEditText.getText().toString()));
                     } else {
-                        MessangeTextView.setText("Будьте внимательны: Вы не ввели электронную почту!");
+                        messageTextView.setText(getString(R.string.textMessageErrorEmail));
                     }
                 } else {
-                    MessangeTextView.setText("Будьте внимательны: Вы не ввели имя пользователя!");
+                    messageTextView.setText(getString(R.string.textMessageErrorUserName));
                 }
 
             }
@@ -41,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
         ClearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserNameEditText.setText(null);
-                EmailEditText.setText("");
-                MessangeTextView.setText("");
+                userNameEditText.setText(null);
+                emailEditText.setText("");
+                messageTextView.setText("");
             }
         });
     }

@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">Универсальная форма ввода</string>
-    <string name="buttonSing">  Подписаться  </string>
-    <string name="buttonClear"> Очистить </string>
+    <string name="buttonSing">Подписаться</string>
+    <string name="buttonClear">Очистить</string>
     <string name="textViwEmail">Электронная почта:</string>
     <string name="textViewUserName">Имя пользователя:</string>
     <string name="textViewBanner">Подписка</string>
+    <string name="textMessageErrorEmail">Будьте внимательны: Вы не ввели электронную почту!</string>
+    <string name="textMessageErrorUserName">Будьте внимательны: Вы не ввели имя пользователя!</string>
+    <string name="textMessageNotify">Подписка на рассылку удачно подписана для пользователя %1$s на электронный адрес %2$s</string>
 </resources>

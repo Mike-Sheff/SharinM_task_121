@@ -15,7 +15,6 @@
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textFontWeight=""
-        tools:ignore="MissingConstraints"
         android:textSize="40sp"/>
 
     <TextView
